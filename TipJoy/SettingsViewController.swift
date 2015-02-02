@@ -19,13 +19,17 @@ class SettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        callDefault()
+
+        // Do any additional setup after loading the view.
+    }
+    
+    func callDefault(){
         var defaults = NSUserDefaults.standardUserDefaults()
         
         firstTipField.text = defaults.objectForKey("firstTipSet") as String
         secondTipField.text = defaults.objectForKey("secondTipSet") as String
         thirdTipField.text = defaults.objectForKey("thirdTipSet") as String
-
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -39,6 +43,8 @@ class SettingsViewController: UIViewController {
     }
     
     @IBAction func saveSettingsButton(sender: AnyObject) {
+        
+        callDefault()
         
         var defaults = NSUserDefaults.standardUserDefaults()
         
